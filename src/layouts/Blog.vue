@@ -10,7 +10,7 @@
               <vue-markdown :anchorAttributes="anchor" :source="entry.body[i]"></vue-markdown>
             </div>
           </template>
-         </b-card-body>
+        </b-card-body>
       </b-card>
     </template>
   </page-layout>
@@ -80,7 +80,8 @@ export default {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
-        day: '2-digit'
+        day: '2-digit',
+        timeZone: 'UTC'
       })
     },
     formatCategory(category) {
@@ -88,23 +89,26 @@ export default {
     },
     parseBody(category, body) {
       let entries = [...body.matchAll(/\[(\d{4}-\d{2}-\d{2})\]\n(.*)/g)]
-      entries.forEach(entry => {
+      for (let i = 0; i < entries.length; i++) {
+        let entry = entries[i]
+        let prev = entry.index + entry[1].length + 2
+        let next = i === entries.length - 1 ? body.length : entries[i + 1].index
         let date = new Date(entry[1])
         let item = this.entries.filter(x => x.date.getTime() === date.getTime())
         if (item.length > 0) {
           item[0].id.push(item[0].id.length)
           item[0].category.push(category)
-          item[0].body.push(entry[2])
+          item[0].body.push(body.substring(prev, next))
         } else {
           this.entries.push({
             index: this.entries.length,
             id: [0],
             category: [category],
             date: new Date(entry[1]),
-            body: [entry[2]]
+            body: [body.substring(prev, next)]
           })
         }
-      })
+      }
     },
     parseFile(filename) {
       let category = filename.split('-')[2]
