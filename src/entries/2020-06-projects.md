@@ -1,5 +1,7 @@
 [2020-06-07]
-And as of today I have creted a new `#blog` project here on github. I am not in the mood to continue maintaining blogspot. Using github to edit markdowns are pretty easy, github pages can be published automatically on every commit, so I decided I will move everything to here eventually. I need to code, but that is the easy part though... Styling will be fun, but I am not in the mood right now, so I will leave the bootstrap default theme in play until I get inspired artistically again.
+And as of today I have creted a new `#blog` project here on github, as I am not in the mood to continue maintaining blogspot. Using github to edit markdowns are pretty easy, github pages can be published automatically on every commit, so I decided I will move everything to here eventually. I need to code, but that is the easy part though... Styling will be fun, but I am not in the mood right now, so I will leave the bootstrap default theme in play until I get some artistical inspiration again.
+
+Anyway, setting up this new project was very quick, it is not even the end of the day and I am creating new posts already... The dream entries are fun to do, I was using a mobile app to do it but I was not very regular at updating my journal though, hopefully adding posts here will be easier. Also, I need inputs for my `#artificial-philosophy` project too, so the more I write the better the philosophers will be.
 
 [2020-06-07]
 So I have been working a lot on my `#machine-learning` project here on github lately. I have finally completed adding the classical examples like regression, classification, dimentionality reduction and series prediction. I just happened to learn a lot about tensorflow, it was fun.
